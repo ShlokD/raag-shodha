@@ -50,10 +50,15 @@ export const start = async () => {
       "b--black-70",
       "br4",
       "ma2",
-      "f4",
+      "f3",
       "bw2",
       "shadow-1",
-      "bg-navy"
+      "bg-navy",
+      "tc",
+      "w-90",
+      "w-20-ns",
+      "pointer",
+      "shadow-1"
     );
     const link = document.createElement("a");
     link.classList.add("white");
