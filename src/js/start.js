@@ -20,9 +20,9 @@ export const start = async () => {
   const currentRagas = raagas.filter((raag) => raag.time === `${prahaarTime}`);
   const imgUrl = new URL(`../headers/${prahaarTime}.jpg`, import.meta.url).href;
   hero.src = `${imgUrl}`;
-  hero.classList.remove("dn");
   hero.addEventListener("load", () => {
     prahaar.textContent = name;
+    hero.classList.remove("dn");
   });
 
   raagList.innerHTML = "";
@@ -56,7 +56,8 @@ export const start = async () => {
       "bg-navy",
       "tc",
       "w-90",
-      "w-20-ns",
+      "w-40-m",
+      "w-20-l",
       "pointer",
       "shadow-1"
     );

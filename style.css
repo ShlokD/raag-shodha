@@ -118,3 +118,7 @@ button:focus-visible {
 .h-two-third {
   height: 67%;
 }
+
+li {
+  word-wrap: break-word;
+}
