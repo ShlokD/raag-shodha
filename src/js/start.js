@@ -45,7 +45,6 @@ export const start = async () => {
   currentRagas.forEach((raag) => {
     const li = document.createElement("li");
     li.classList.add(
-      "pa4",
       "ba",
       "b--black-70",
       "br4",
@@ -62,7 +61,7 @@ export const start = async () => {
       "shadow-1"
     );
     const link = document.createElement("a");
-    link.classList.add("white");
+    link.classList.add("white", "w-100", "h-100", "pa4", "db");
     const raagName = raag.name.split("/")[0];
     link.textContent = raagName;
     link.href = `https://www.youtube.com/results?search_query=raag+${raagName}`;
