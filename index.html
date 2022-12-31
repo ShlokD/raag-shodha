@@ -1,34 +1,34 @@
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title></title>
-  <meta name="description" content="indian classical music raagas search">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/icon.png" />
   <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amita:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raag Shodha</title>
 </head>
 
-<body class="pa2">
-  <header class="tc">
-    <h1> Raag Shodh</h1>
-  </header>
-  <main class="flex flex-column flex-row-ns">
-    <div class="h-one-third h-100-ns w-100 w-50-ns tc">
-      <h2 id="prahaar">...</h2>
-    </div>
-    <div id="raag-list" class="h-two-third h-100-ns w-100 w-50-ns"></div>
 
-  </main>
-  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
+<body class="pa2 w-100 bg-black">
+  <div id="app" class="w-100">
+    <header class="tc pa2">
+      <img src="/background.PNG" />
+    </header>
+    <main class="flex flex-column justify-center">
+      <div class="h-25 w-100 tc ma1 pa2 relative">
+        <img id="hero" alt="hero-img" class="dn relative br2 bg-transparent ba bw2 b--black-90 shadow-1 w-75" />
+        <h1 id="prahaar" class="absolute bottom-0 left-0 f-headline white shadow-2"></h1>
+      </div>
+      <div id="raag-list" class="h-two-third w-100 ma1 pa2"></div>
+
+    </main>
+  </div>
+  <script type="module" src="/main.js"></script>
+
 </body>
 
 </html>

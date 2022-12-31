@@ -2,7 +2,7 @@ import { getPrahaar } from "./utils";
 
 export const start = async () => {
   console.log("hello");
-  const raagas = await import("./raagas.json");
+  const raagas = await (await import("./raagas.js")).default;
   const NAME_MAP = [
     "Purvanha",
     "Madhyanha",
@@ -15,21 +15,52 @@ export const start = async () => {
   ];
   const prahaar = document.querySelector("#prahaar");
   const raagList = document.querySelector("#raag-list");
+  const hero = document.querySelector("#hero");
   const prahaarTime = getPrahaar();
   const name = NAME_MAP[prahaarTime - 1];
-  prahaar.textContent = name;
   const currentRagas = raagas.filter((raag) => raag.time === `${prahaarTime}`);
+  const imgUrl = new URL(`../headers/${prahaarTime}.jpg`, import.meta.url).href;
+  hero.src = `${imgUrl}`;
+  hero.classList.remove("dn");
+  hero.addEventListener("load", () => {
+    prahaar.textContent = name;
+  });
 
   raagList.innerHTML = "";
 
   const fragment = new DocumentFragment();
   const ul = document.createElement("ul");
 
+  ul.classList.add(
+    "list",
+    "flex",
+    "flex-row-ns",
+    "flex-column",
+    "flex-wrap",
+    "pa0",
+    "ma0",
+    "items-center",
+    "justify-center"
+  );
+
   currentRagas.forEach((raag) => {
     const li = document.createElement("li");
+    li.classList.add(
+      "pa4",
+      "ba",
+      "b--black-70",
+      "br4",
+      "ma2",
+      "f4",
+      "bw2",
+      "shadow-1",
+      "bg-navy"
+    );
     const link = document.createElement("a");
-    link.textContent = raag.name;
-    link.href = `https://www.youtube.com/results?search_query=raag+${raag.name}`;
+    link.classList.add("white");
+    const raagName = raag.name.split("/")[0];
+    link.textContent = raagName;
+    link.href = `https://www.youtube.com/results?search_query=raag+${raagName}`;
     link.setAttribute("rel", "noreferrer noopener");
     link.setAttribute("target", "_blank");
     li.appendChild(link);

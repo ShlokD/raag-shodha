@@ -1,4 +1,4 @@
 import "./style.css";
-import { start } from "./js/start";
+import { start } from "./src/js/start";
 
 start();
