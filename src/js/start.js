@@ -1,7 +1,6 @@
 import { getPrahaar } from "./utils";
 
 export const start = async () => {
-  console.log("hello");
   const raagas = await (await import("./raagas.js")).default;
   const NAME_MAP = [
     "Purvanha",
